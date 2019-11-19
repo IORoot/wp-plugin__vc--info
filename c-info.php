@@ -45,7 +45,7 @@ function create_c_info(){
 			add_shortcode( 'cinfo', array( $this, 'renderShortcode' ) );
 
 			// Register CSS and JS
-			add_action( 'wp_enqueue_scripts', array( $this, 'loadCssAndJs' ) );
+			add_action( 'get_footer', array( $this, 'loadCssAndJs' ) );
 		}
 
 		/*
