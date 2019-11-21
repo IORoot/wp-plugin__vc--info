@@ -76,6 +76,7 @@ vc_map( array(
                         ),
                         "description" => __("This will either be an IMG tag or a CSS url() on the overlay DIV.", 'vc_extend'),
                         "group" => __("Overlay", 'vc_extend'),
+                        "edit_field_class" => __("vc_col-xs-6"),
                     ),
                     //  ┌──────────────────────────────────────┐
                     //  │               Lazyload?              │
