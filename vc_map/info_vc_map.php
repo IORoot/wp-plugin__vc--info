@@ -64,7 +64,7 @@ vc_map( array(
                         "group" => __("Overlay", 'vc_extend'),
                     ),
                     //  ┌──────────────────────────────────────┐
-                    //  │             Float Clear              │
+                    //  │             IMG or URL()             │
                     //  └──────────────────────────────────────┘
                     array(
                         "type" => "dropdown",
@@ -76,6 +76,18 @@ vc_map( array(
                         ),
                         "description" => __("This will either be an IMG tag or a CSS url() on the overlay DIV.", 'vc_extend'),
                         "group" => __("Overlay", 'vc_extend'),
+                    ),
+                    //  ┌──────────────────────────────────────┐
+                    //  │               Lazyload?              │
+                    //  └──────────────────────────────────────┘
+                    array(
+                        "type" => "checkbox",
+                        "heading" => __("Lazyload", 'vc_extend'),
+                        "param_name" => "info_overlay_lazyload",
+                        "value" => __("", 'vc_extend'),
+                        "description" => __("Add .lazyloaded class onto the CSS style?", 'vc_extend'),
+                        "group" => __("Overlay", 'vc_extend'),
+                        "edit_field_class" => __("vc_col-xs-6"),
                     ),
                     //  ┌──────────────────────────────────────┐
                     //  │         Overlay Custom CSS           │

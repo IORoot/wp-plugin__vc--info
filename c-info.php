@@ -66,6 +66,7 @@ function create_c_info(){
 						// Overlay
 						'info_overlay_image' => '',
 						'info_overlay_type' => '',
+						'info_overlay_lazyload' => '',
 						'info_overlay_css_custom' => '',
 
 						// Front
@@ -198,7 +199,9 @@ function create_c_info(){
                     <?php echo rawurldecode( base64_decode( $info_pre_content_css_custom ) ); ?>
 
                     <?php if ($info_overlay_type == 'background'){
-                        echo $unique_class . ' .c-info__overlay {';
+						echo $unique_class . ' .c-info__overlay';
+						if ($info_overlay_lazyload){echo '.lazyloaded';} 
+						echo '{';
                             echo $this->renderImage($info_overlay_image,'background-image', true);
                         echo '}';
                     } ?>
@@ -313,12 +316,14 @@ function create_c_info(){
 								echo '</div>';
 							} ?>
 
-							<?php if ($info_overlay_type == 'img') {
-								echo '<div class="c-info__overlay"> ';
+							<?php 
+							$lazyload = ($info_overlay_lazyload ? 'lazyload' : '');
+							if ($info_overlay_type == 'img') {
+								echo '<div class="c-info__overlay '.$lazyload.'"> ';
 									$this->renderImage($info_overlay_image);
 								echo '</div>';
 							} else {
-								echo '<div class="c-info__overlay"> ';
+								echo '<div class="c-info__overlay '.$lazyload.'"> ';
 								echo '</div>';
 							}?>
 
