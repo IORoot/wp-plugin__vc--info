@@ -39,7 +39,7 @@ function create_c_info(){
 	//  └──────────────────────────────────────┘
 	class VC_C_Info {
 
-		function __construct() {
+		public function __construct() {
 	
 			// Use this when creating a shortcode addon
 			add_shortcode( 'cinfo', array( $this, 'renderShortcode' ) );
@@ -175,7 +175,7 @@ function create_c_info(){
 
 
             $grid_out = '';
-           
+
             if ($info_subgrid_template_columns != ''){ $grid_out .= 'display: grid;' ; }
             if ($info_subgrid_template_columns != ''){ $grid_out .= 'grid-template-columns: '. $info_subgrid_template_columns  .'; ' ; }
             if ($info_subgrid_template_rows != ''){    $grid_out .= 'grid-template-rows: '.    $info_subgrid_template_rows  .'; ' ; }
